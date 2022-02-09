@@ -1,12 +1,10 @@
-import { Box, Button, Center, Heading, HStack, Spacer, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Center, Heading, HStack, Spacer, Stack, Text, VStack } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import NavHeader from 'components/organisms/NavHeader';
 import React from 'react';
-import { Icon, IconProps } from '@chakra-ui/react';
 import LandingTemplate from 'components/templates/LandingTemplate';
 import Whatsapp from 'components/icons/System/Whatsapp';
 
-function CardTop() {
+function Section1() {
   return (
     <VStack m={0} p={0} w="100%" opacity={0.8} bgGradient="linear-gradient(150deg,#1d9c9e 64%,#a7a9ac 77%)">
       <Heading mt="200px" color="white" mb="15px" as="h1" fontFamily="Playfair Display" fontWeight={600} fontSize={56}>
@@ -42,12 +40,19 @@ function CardTop() {
 export default function index() {
   return (
     <LandingTemplate>
-      <HStack w="100%" p="104px 0 160px">
-        <VStack w="50%">
-          <Text>Welcome to Indental Clinic Surabaya</Text>
+      <Stack direction={['column', 'row']} w="100%" p="104px 20px 160px">
+        <VStack>
+          <Heading w="100%" as="h2" fontFamily="PlayFair Display" fontSize={25}>
+            Welcome to Indental Clinic Surabaya
+          </Heading>
+          <Text fontFamily="Ubuntu" fontSize={16} color="#5A5A5A">
+            Indental Clinic Surabaya adalah <strong>One Stop Clinic</strong> dimana pasien tidak perlu repot-repot mencari dokter gigi spesialis penunjang yang
+            dibutuhkan untuk kasusnya. Karena dokter gigi spesialis yang dibutuhkan ada dalam satu tempat dan semua kasus gigi dapat dirawat dalam satu atap
+            sehingga perawatan menjadi lebih terkoordinasi, lebih cepat dan lebih baik.
+          </Text>
         </VStack>
-        <Box w="50%"></Box>
-      </HStack>
+        <Box>hihihih</Box>
+      </Stack>
     </LandingTemplate>
   );
 }
