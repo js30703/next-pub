@@ -17,6 +17,39 @@ import { Provider } from 'react-redux';
 import Head from 'next/head';
 import { SITE_NAME } from './_document';
 
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import {
+  fas,
+  faR,
+  faCheckSquare,
+  faCoffee,
+  faLocationDot,
+  faCalendarDays,
+  faClinicMedical,
+  faHandHoldingMedical,
+  faCalendarCheck,
+  faCommentMedical,
+} from '@fortawesome/free-solid-svg-icons';
+
+library.add(
+  fab,
+  fas,
+  faR,
+  faCheckSquare,
+  faCoffee,
+  faLocationDot,
+  faCalendarDays,
+  faClinicMedical,
+  faWhatsapp,
+  faHandHoldingMedical,
+  faCalendarCheck,
+  faCommentMedical,
+);
+
 // Create a client
 const queryClient = new QueryClient();
 
@@ -35,7 +68,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Head>
             <title>{SITE_NAME}</title>
           </Head>
-          <ToggleColorModeButton />
+          {/* <ToggleColorModeButton /> */}
           <Component {...pageProps} />
         </ThemeProvider>
         <ReactQueryDevtools initialIsOpen={false} />

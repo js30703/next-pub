@@ -5,10 +5,10 @@ import config from 'styles/theme/foundations/config';
 
 export const SITE_NAME = 'Indental';
 const SITE_TITLE = 'Indental';
-const SITE_DESCRIPTION = '디지털프로덕트의 TOKTOK한 경험';
+const SITE_DESCRIPTION = 'WonderfulLife with Beautiful Smile';
 const SITE_IMAGE = '/images/logo.jpg';
 
-const GOOGLE_ANALYTICS_ID = 'G-입력해주세요';
+const GOOGLE_ANALYTICS_ID = 'G-what';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -74,8 +74,8 @@ class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
 
           {/* Global site tag (gtag.js) - Google Analytics */}
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}></script>
-          <script dangerouslySetInnerHTML={this.setGoogleAnalytics()} />
+          {/* <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}></script> */}
+          {/* <script dangerouslySetInnerHTML={this.setGoogleAnalytics()} /> */}
           {/* <link rel="preconnect" href="https://fonts.gstatic.com"/>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair-Display"/>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli"/> */}

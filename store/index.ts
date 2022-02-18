@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './counterSlice';
+import sectionReducer from './section1Slice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    section1: sectionReducer,
   },
 });
 
