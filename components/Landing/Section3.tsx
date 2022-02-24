@@ -53,7 +53,7 @@ function Section3Card({ num, title, image, children }: Section3CardProps) {
         </Text>
       </VStack>
 
-      <NextImage zIndex={-1} src={image} layout="fill" objectFit="cover" />
+      <NextImage zIndex={-1} src={image} layout="fill" objectFit="cover" alt={`${num}pic`} />
     </Wrap>
   );
 }
