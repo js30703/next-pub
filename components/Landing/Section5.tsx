@@ -1,6 +1,8 @@
-import { Box, Heading, Stack, Text, VStack, Flex } from '@chakra-ui/react';
+import { Box, Heading, Stack, Text, VStack, Flex, chakra } from '@chakra-ui/react';
+import bg from 'public/images/wp-content/drg-Iin-Nurwasis-Sp-Ort.webp';
+import Image from 'next/image';
+const NextImage = chakra(Image);
 
-//============  Section5  ==========//
 export default function Section5() {
   return (
     <Stack w="100%" h="100%" maxW="1280px" m="0px auto" direction={['column-reverse', 'row']} p="10px">
@@ -14,14 +16,9 @@ export default function Section5() {
         bg="url('images/wp-content/service-6.jpg') no-repeat top 20px left 20px /320px 500px"
         opacity={0.98}
       >
-        <Flex
-          ml="auto"
-          mt="auto"
-          w="320px"
-          h="512px"
-          bg="url('images/wp-content/drg-Iin-Nurwasis-Sp-Ort.webp') no-repeat center center / cover"
-          borderBottomRadius="200px"
-        ></Flex>
+        <Flex pos="relative" ml="auto" mt="auto" w="320px" h="512px" borderBottomRadius="200px">
+          <NextImage src={bg} borderBottomRadius="200px" />
+        </Flex>
       </Flex>
       <VStack w="100%" spacing="20px" p="10px">
         <Heading w="100%" as="h4">
