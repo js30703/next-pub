@@ -1,6 +1,6 @@
 import { Box, Button, Heading, Text, VStack, Wrap, chakra } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Whatsapp from 'components/Whatsapp';
 import Image from 'next/image';
 import bg1 from 'public/images/wp-content/Wafa-Okbah.webp';
@@ -16,7 +16,6 @@ let timeout: any = null;
 
 export default function Section1() {
   const imgList = [bg1, bg2, bg3, bg4, bg5, bg6];
-  const ref = useRef(null);
   const [counter, setCounter] = useState(0);
 
   myCounter = counter;
