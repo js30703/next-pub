@@ -51,7 +51,7 @@ export default function Section4() {
           bgColor="#d81212"
           borderRadius="15px"
           fontFamily="Arial"
-          fontSize="20px"
+          fontSize={['15px', '20px']}
           color="white"
           _hover={{ transform: 'scale(1.1)', transition: '0.3s', opacity: 1 }}
         >
