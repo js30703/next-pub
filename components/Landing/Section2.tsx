@@ -62,6 +62,7 @@ export default function Section2() {
             <Flex
               bg="url('images/wp-content/Ruang-Konsultasi-dan-Perawatan.webp') no-repeat center center /cover"
               w="95%"
+              maxW="380px"
               m="0px auto"
               h="300px"
               alignSelf="flex-end"
