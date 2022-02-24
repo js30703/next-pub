@@ -96,7 +96,7 @@ export default function Section1() {
             opacity={index == counter ? 1 : 0}
             h="100%"
           >
-            <NextImage src={img} layout="fill" objectFit="cover" quality={90} alt={`bg${index}`} priority={index < 3} />
+            <NextImage src={img} layout="fill" objectFit="cover" quality={40} alt={`bg${index}`} priority={index < 3} />
           </Box>
         );
       })}

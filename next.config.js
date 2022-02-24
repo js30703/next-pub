@@ -1,7 +1,4 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-module.exports = withBundleAnalyzer({
+module.exports = {
   concurrentFeatures: true,
   poweredByHeader: false,
   eslint: {
@@ -11,4 +8,4 @@ module.exports = withBundleAnalyzer({
     locales: ['id'],
     defaultLocale: 'id',
   },
-});
+};
