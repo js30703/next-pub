@@ -4,24 +4,36 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import LandingTemplate from 'components/LandingTemplate';
 import Whatsapp from 'components/Whatsapp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { count } from 'store/section1Slice';
-// import { RootState } from 'store';
+import { chakra } from '@chakra-ui/react';
+import Image from 'next/image';
+import bg1 from 'public/images/wp-content/Wafa-Okbah.webp';
+import bg2 from 'public/images/wp-content/pexels-summer-breeze-2703766.webp';
+import bg3 from 'public/images/wp-content/pexels-christian-diokno-5019878.webp';
+import bg4 from 'public/images/wp-content/pexels-alex-green-5692264.webp';
+import bg5 from 'public/images/wp-content/Family.webp';
+import bg6 from 'public/images/wp-content/Couple.webp';
+import bg7 from 'public/images/wp-content/10.webp';
+import bg8 from 'public/images/wp-content/pexels-ketut-subiyanto-4350225.webp';
+import bg9 from 'public/images/wp-content/service-4.jpg';
+import bg10 from 'public/images/wp-content/service-5.jpg';
+import bg11 from 'public/images/wp-content/6.webp';
+import bg12 from 'public/images/wp-content/7.webp';
+import bg13 from 'public/images/wp-content/8.webp';
+import bg14 from 'public/images/wp-content/9.webp';
+import bg15 from 'public/images/wp-content/service-8.jpg';
+import bg16 from 'public/images/wp-content/13.webp';
+import bg17 from 'public/images/wp-content/11.webp';
+import bg18 from 'public/images/wp-content/12.webp';
+import bg19 from 'public/images/wp-content/service-3.jpg';
+
+const NextImage = chakra(Image);
 
 //============Section 1==========//
 let myCounter = 0;
 let timeout: any = null;
 
 function Section1() {
-  const imgList = [
-    'Wafa-Okbah.webp',
-    'pexels-summer-breeze-2703766.webp',
-    'pexels-christian-diokno-5019878.webp',
-    'pexels-alex-green-5692264.webp',
-    'Family.webp',
-    'Couple.webp',
-    'Couple.webp',
-  ];
+  const imgList = [bg1, bg2, bg3, bg4, bg5, bg6];
   const ref = useRef(null);
   const [counter, setCounter] = useState(0);
 
@@ -43,7 +55,13 @@ function Section1() {
 
   return (
     <Wrap w="100%" h="100%" position="relative" m="0px" spacing={0}>
-      <VStack m="0px !important" w="100%" minW="350px" bg="transparent">
+      <VStack
+        m="0px !important"
+        w="100%"
+        minW="350px"
+        bg="transparent"
+        bgGradient={`linear-gradient(150deg,rgb(29, 156, 158, 0.5) 64%, rgb(167, 169, 172, 0.5) 77%)`}
+      >
         <Heading
           w="100%"
           m={['60px auto 0px', '120px auto 0px', '180px auto 0px']}
@@ -82,10 +100,10 @@ function Section1() {
           </svg>
         </Box>
       </VStack>
-      {imgList.map((url, index) => {
+      {imgList.map((img, index) => {
         if (index == 6) return;
         return (
-          <WrapItem
+          <Box
             key={index}
             zIndex={-1}
             position="absolute"
@@ -96,8 +114,9 @@ function Section1() {
             w="100%"
             opacity={index == counter ? 1 : 0}
             h="100%"
-            bg={`linear-gradient(150deg,rgb(29, 156, 158, 0.5) 64%, rgb(167, 169, 172, 0.5) 77%), url(images/wp-content/${url}) no-repeat center center / cover`}
-          ></WrapItem>
+          >
+            <NextImage src={img} layout="fill" objectFit="cover" />
+          </Box>
         );
       })}
     </Wrap>
@@ -208,7 +227,7 @@ function Section2() {
 interface Section3CardProps extends ChakraProps {
   num: number;
   title: string;
-  image: string;
+  image: StaticImageData;
   children: string;
 }
 function Section3Card({ num, title, image, children }: Section3CardProps) {
@@ -218,24 +237,29 @@ function Section3Card({ num, title, image, children }: Section3CardProps) {
     return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
   }
   return (
-    <VStack
-      spacing={2}
+    <Wrap
       w="100%"
-      p="30px"
-      h="auto"
-      bg={`linear-gradient(rgba(29, 49, 87, 0.64),rgba(29, 49, 87, 0.64)) , url(/images/wp-content/${image}) no-repeat center center / cover`}
-      _hover={{ bg: `linear-gradient(rgba(29, 49, 87, 0.8),rgba(29, 49, 87, 0.8) ), url(/images/wp-content/${image}) no-repeat center center / cover` }}
+      h="100%"
+      position="relative"
+      m="0px"
+      spacing={0}
+      bg={`linear-gradient(rgba(29, 49, 87, 0.64),rgba(29, 49, 87, 0.64))`}
+      _hover={{ bg: `linear-gradient(rgba(29, 49, 87, 0.8),rgba(29, 49, 87, 0.8) )` }}
     >
-      <Heading as="h4" w="100%" fontFamily="inter" fontSize="20px" color="white">
-        {numberWithPlace(num)}.
-      </Heading>
-      <Heading as="h4" w="100%" fontFamily="inter" fontSize="20px" color="white">
-        {title}
-      </Heading>
-      <Text w="100%" fontFamily={'Ubuntu'} fontSize={16} color="white">
-        {children}
-      </Text>
-    </VStack>
+      <VStack spacing={2} w="100%" p="30px">
+        <Heading as="h4" w="100%" fontFamily="inter" fontSize="20px" color="white">
+          {numberWithPlace(num)}.
+        </Heading>
+        <Heading as="h4" w="100%" fontFamily="inter" fontSize="20px" color="white">
+          {title}
+        </Heading>
+        <Text w="100%" fontFamily={'Ubuntu'} fontSize={16} color="white">
+          {children}
+        </Text>
+      </VStack>
+
+      <NextImage zIndex={-1} src={image} layout="fill" objectFit="cover" />
+    </Wrap>
   );
 }
 
@@ -244,7 +268,7 @@ function Section3() {
     <Stack w="100%" maxW="1280px" m="0px auto 20px" p="0px 20px" spacing={0} border="none">
       {/* //=== header ==// */}
       <Stack w="100%" direction={['column', 'column', 'row']} spacing={0} border="none">
-        <Box p="0px" w="100%" bg="white" h="100%" maxH="210px" overflow="auto">
+        <Box p="0px" w="100%" bg="white" h="auto" maxH="210px" overflow="auto">
           <Heading as="h2" fontFamily="PlayFair Display" fontSize="2em">
             Indental Clinic Services
           </Heading>
@@ -254,10 +278,10 @@ function Section3() {
           </Text>
         </Box>
         <Stack w="100%" direction={['column', 'row']} spacing={0} border="none">
-          <Section3Card num={1} title="Perawatan Gigi Umum" image="10.webp">
+          <Section3Card num={1} title="Perawatan Gigi Umum" image={bg7}>
             Pemeriksaan gigi, tambal gigi, scaling, dan konsultasi gigi secara umum.
           </Section3Card>
-          <Section3Card num={2} title="Behel Gigi" image="pexels-ketut-subiyanto-4350225.webp">
+          <Section3Card num={2} title="Behel Gigi" image={bg8}>
             Perawatan behel/kawat gigi oleh dokter gigi spesialis ortodonti profesional.
           </Section3Card>
         </Stack>
@@ -265,18 +289,18 @@ function Section3() {
       {/* //=== row ==// */}
       <Stack w="100%" direction={['column', 'column', 'row']} spacing={0} border="none">
         <Stack w="100%" direction={['column', 'row']} spacing={0} border="none">
-          <Section3Card num={3} title="Scaling Gigi" image="service-3.jpg">
+          <Section3Card num={3} title="Scaling Gigi" image={bg19}>
             Pembersihan karang gigi untuk atasi bau mulut, gigi kuning, dan gusi berdarah.
           </Section3Card>
-          <Section3Card num={4} title="Veneer Gigi" image="service-4.jpg">
+          <Section3Card num={4} title="Veneer Gigi" image={bg9}>
             Perawatan restorasi gigi untuk atasi gigi bercelah, berbeda warna, patah, dll.
           </Section3Card>
         </Stack>
         <Stack w="100%" direction={['column', 'row']} spacing={0} border="none">
-          <Section3Card num={5} title="Operasi Gigi" image="service-5.jpg">
+          <Section3Card num={5} title="Operasi Gigi" image={bg10}>
             Operasi gigi geraham bungsu impaksi oleh dokter gigi spesialis bedah mulut.
           </Section3Card>
-          <Section3Card num={6} title="Gigi Tiruan" image="6.webp">
+          <Section3Card num={6} title="Gigi Tiruan" image={bg11}>
             Gigi tiruan cekat & lepasan oleh dokter gigi spesialis prostodonti profesional.
           </Section3Card>
         </Stack>
@@ -285,18 +309,18 @@ function Section3() {
       {/* //=== row ==// */}
       <Stack w="100%" direction={['column', 'column', 'row']} spacing={0} border="none">
         <Stack w="100%" direction={['column', 'row']} spacing={0} border="none">
-          <Section3Card num={7} title="Implan Gigi" image="7.webp">
+          <Section3Card num={7} title="Implan Gigi" image={bg12}>
             PeImplan adalah opsi perawatan gigi palsu permanen dengan daya tahan tinggi.
           </Section3Card>
-          <Section3Card num={8} title="Whitening" image="8.webp">
+          <Section3Card num={8} title="Whitening" image={bg13}>
             Solusi bagi gigi yang kuning dan kusam agar kembali putih, cerah dan cemerlang.
           </Section3Card>
         </Stack>
         <Stack w="100%" direction={['column', 'row']} spacing={0} border="none">
-          <Section3Card num={9} title="Perawatan Gigi Anak" image="9.webp">
+          <Section3Card num={9} title="Perawatan Gigi Anak" image={bg14}>
             Jaga kesehatan gigi si kecil sejak dini bersama dokter gigi spesialis gigi anak.
           </Section3Card>
-          <Section3Card num={10} title="Perawatan Saluran Akar" image="service-8.jpg">
+          <Section3Card num={10} title="Perawatan Saluran Akar" image={bg15}>
             Perawatan saluran akar untuk atasi kerusakan dan infeksi di syaraf pada gigi.
           </Section3Card>
         </Stack>
@@ -305,37 +329,41 @@ function Section3() {
       {/* //=== footer ==// */}
       <Stack w="100%" direction={['column', 'column', 'row']} spacing={0} border="none">
         <Stack w="100%" direction={['column', 'row']} spacing={0} border="none">
-          <Section3Card num={11} title="Gum Lifting" image="11.webp">
+          <Section3Card num={11} title="Gum Lifting" image={bg17}>
             Perbaiki estetika senyuman dengan membentuk gusi atau memanjangkan mahkota gigi.
           </Section3Card>
-          <Section3Card num={12} title="Berbagai macam aksesoris gigi" image="12.webp">
+          <Section3Card num={12} title="Berbagai macam aksesoris gigi" image={bg18}>
             Percantik estetika senyuman dengan beragam pilihan aksesoris dan berlian gigi.
           </Section3Card>
         </Stack>
         <Stack w="100%" direction={['column', 'row']} spacing={0} border="none">
-          <Section3Card num={13} title="Cosmetic Contouring" image="13.webp">
+          <Section3Card num={13} title="Cosmetic Contouring" image={bg16}>
             Sempurnakan senyuman dengan mengubah bentuk & permukaan gigi secara menyeluruh.
           </Section3Card>
-          <VStack w="100%" bg="#275c88" h="auto" borderBottomRightRadius="300px" p="30px" alignItems="left">
-            <Text fontSize="0.9rem" letterSpacing="2px" color="white" fontWeight={600}>
+          <VStack w="100%" bg="#275c88" h="auto" borderBottomRightRadius="300px" p="0px" alignItems="left">
+            <Text fontSize="0.9rem" letterSpacing="2px" mt="30px" ml="30px" color="white" fontWeight={600}>
               <FontAwesomeIcon icon={['fas', 'calendar-days']} />
               <Box ml="5px" display="inline">
                 INFORMASI JADWAL DOKTER
               </Box>
             </Text>
-            <Button
-              mt={['20px', '40px']}
-              bg="#DD4949"
-              p="16px 24px"
-              w="116px"
-              h="auto"
-              color="white"
-              fontSize="15px"
-              fontFamily="inter"
-              _hover={{ transform: 'scale(1.1)', transition: '0.3s', opacity: 1, bg: '#d81212' }}
-            >
-              Klic Disini
-            </Button>
+            <Box w="100%" h="100%">
+              <Button
+                mt={['20px', '40px']}
+                ml="30px"
+                mb="30px"
+                bg="#DD4949"
+                p="16px 24px"
+                w="116px"
+                h="auto"
+                color="white"
+                fontSize="15px"
+                fontFamily="inter"
+                _hover={{ transform: 'scale(1.1)', transition: '0.3s', opacity: 1, bg: '#d81212' }}
+              >
+                Klic Disini
+              </Button>
+            </Box>
           </VStack>
         </Stack>
       </Stack>
