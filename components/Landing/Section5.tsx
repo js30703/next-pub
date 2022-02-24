@@ -17,7 +17,7 @@ export default function Section5() {
         opacity={0.98}
       >
         <Flex pos="relative" ml="auto" mt="auto" w="320px" h="512px" borderBottomRadius="200px">
-          <NextImage src={bg} borderBottomRadius="200px" alt="drg_inn" priority />
+          <NextImage src={bg} borderBottomRadius="200px" alt="drg_inn" priority quality={50} />
         </Flex>
       </Flex>
       <VStack w="100%" spacing="20px" p="10px">
