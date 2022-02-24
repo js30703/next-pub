@@ -38,7 +38,7 @@ export default function Section3Card({ num, title, image, children }: Section3Ca
         </Text>
       </VStack>
 
-      <NextImage zIndex={-1} src={image} layout="fill" objectFit="cover" alt={`${num}pic`} />
+      <NextImage zIndex={-1} src={image} layout="fill" objectFit="cover" quality={40} alt={`${num}pic`} />
     </Wrap>
   );
 }
