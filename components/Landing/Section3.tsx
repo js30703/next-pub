@@ -1,6 +1,5 @@
 import { Box, Button, Heading, Stack, Text, VStack } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import dynamic from 'next/dynamic';
 import bg7 from 'public/images/wp-content/10.webp';
 import bg8 from 'public/images/wp-content/pexels-ketut-subiyanto-4350225.webp';
 import bg9 from 'public/images/wp-content/service-4.jpg';
@@ -14,8 +13,10 @@ import bg16 from 'public/images/wp-content/13.webp';
 import bg17 from 'public/images/wp-content/11.webp';
 import bg18 from 'public/images/wp-content/12.webp';
 import bg19 from 'public/images/wp-content/service-3.jpg';
+import Section3Card from './Section3Card';
 
-const Section3Card = dynamic(() => import('./Section3Card'));
+// import dynamic from 'next/dynamic';
+// const Section3Card = dynamic(() => import('./Section3Card'));
 
 export default function Section3() {
   return (

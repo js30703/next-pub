@@ -1,8 +1,9 @@
 import { Box, ChakraProps, Circle, Heading, Stack, Text, VStack, Flex, Wrap, WrapItem } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Section2LeftCard from './Section2LeftCard';
 
-import dynamic from 'next/dynamic';
-const Section2LeftCard = dynamic(() => import('./Section2LeftCard'));
+// import dynamic from 'next/dynamic';
+// const Section2LeftCard = dynamic(() => import('./Section2LeftCard'));
 
 export default function Section2() {
   return (
