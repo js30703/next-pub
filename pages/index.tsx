@@ -1,8 +1,8 @@
 import { Box, Button, Center, ChakraProps, Circle, Heading, Stack, Text, VStack, Flex, Wrap, WrapItem } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import LandingTemplate from 'components/templates/LandingTemplate';
-import Whatsapp from 'components/icons/System/Whatsapp';
+import LandingTemplate from 'components/LandingTemplate';
+import Whatsapp from 'components/Whatsapp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { useSelector, useDispatch } from 'react-redux';
 // import { count } from 'store/section1Slice';
@@ -173,9 +173,9 @@ function Section2() {
       <Flex w={['100%', '50%']} position="relative" height={['100%', 'auto']}>
         <Flex
           bg={[
+            "url('images/wp-content/Perawatan-e1616944220783.webp') no-repeat top right / 300px ",
             "url('images/wp-content/Perawatan-e1616944220783.webp') no-repeat top right / 82% ",
-            "url('images/wp-content/Perawatan-e1616944220783.webp') no-repeat top right / 82% ",
-            "url('images/wp-content/Perawatan-e1616944220783.webp') no-repeat center / 62%",
+            "url('images/wp-content/Perawatan-e1616944220783.webp') no-repeat center / 50%",
           ]}
           pt={['240px', '0px']}
           transition="background 0.6s"
@@ -185,8 +185,9 @@ function Section2() {
           <Flex w="100%" h="100%" bg="url('images/wp-content/dots.png') no-repeat center left / 170px ">
             <Flex
               bg="url('images/wp-content/Ruang-Konsultasi-dan-Perawatan.webp') no-repeat center center /cover"
-              w={['72%', '72%', '100%']}
-              h="360px"
+              w="95%"
+              m="0px auto"
+              h="300px"
               alignSelf="flex-end"
               alignItems="flex-end"
             >
@@ -353,10 +354,10 @@ function Section4() {
           </Box>
           OPENING HOURS
         </Text>
-        <Text w="100%" fontFamily="inter" fontSize={24} fontWeight={600} textAlign="right">
+        <Text w="100%" fontFamily="inter" fontSize={['14px', '20px']} fontWeight={600} textAlign="right">
           MON - FRI | 9 AM - 9 PM
         </Text>
-        <Text w="100%" fontFamily="inter" fontSize={24} fontWeight={600} textAlign="right">
+        <Text w="100%" fontFamily="inter" fontSize={['14px', '20px']} fontWeight={600} textAlign="right">
           SAT | 9 AM - 5 PM
         </Text>
         <Heading as="h3">Perawatan Nyaman di Indental Clinic</Heading>
