@@ -3,8 +3,8 @@ import { ColorModeScript } from '@chakra-ui/color-mode';
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 import config from 'styles/theme/foundations/config';
 
-export const SITE_NAME = 'Indental';
-const SITE_TITLE = 'Indental';
+export const SITE_NAME = 'Indental Clinic Surabaya';
+const SITE_TITLE = 'Indental Clinic Surabaya';
 const SITE_DESCRIPTION = 'WonderfulLife with Beautiful Smile';
 const SITE_IMAGE = '/images/logo.jpg';
 
